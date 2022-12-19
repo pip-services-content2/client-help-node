@@ -6,8 +6,8 @@ import { ConsoleLogger } from 'pip-services3-components-nodex';
 import { HelpTopicsMemoryPersistence } from 'service-help-node';
 import { HelpArticlesMemoryPersistence } from 'service-help-node';
 import { HelpController } from 'service-help-node';
-import { HelpHttpServiceV1 } from 'service-help-node';
-import { HelpHttpClientV1 } from '../../src/version1/HelpHttpClientV1';
+import { HelpCommandableHttpServiceV1 } from 'service-help-node';
+import { HelpCommandableHttpClientV1 } from '../../src/version1/HelpCommandableHttpClientV1';
 import { HelpClientFixtureV1 } from './HelpClientFixtureV1';
 
 var httpConfig = ConfigParams.fromTuples(
@@ -16,9 +16,9 @@ var httpConfig = ConfigParams.fromTuples(
     "connection.port", 3000
 );
 
-suite('HelpHttpClientV1', ()=> {
-    let service: HelpHttpServiceV1;
-    let client: HelpHttpClientV1;
+suite('HelpCommandableHttpClientV1', ()=> {
+    let service: HelpCommandableHttpServiceV1;
+    let client: HelpCommandableHttpClientV1;
     let fixture: HelpClientFixtureV1;
 
     suiteSetup(async () => {
@@ -27,7 +27,7 @@ suite('HelpHttpClientV1', ()=> {
         let persistenceArticles = new HelpArticlesMemoryPersistence();
         let controller = new HelpController();
 
-        service = new HelpHttpServiceV1();
+        service = new HelpCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         let references: References = References.fromTuples(
@@ -35,12 +35,12 @@ suite('HelpHttpClientV1', ()=> {
             new Descriptor('service-help', 'persistence-topics', 'memory', 'default', '1.0'), persistenceTopics,
             new Descriptor('service-help', 'persistence-articles', 'memory', 'default', '1.0'), persistenceArticles,
             new Descriptor('service-help', 'controller', 'default', 'default', '1.0'), controller,
-            new Descriptor('service-help', 'service', 'http', 'default', '1.0'), service
+            new Descriptor('service-help', 'service', 'commandable-http', 'default', '1.0'), service
         );
         controller.setReferences(references);
         service.setReferences(references);
 
-        client = new HelpHttpClientV1();
+        client = new HelpCommandableHttpClientV1();
         client.setReferences(references);
         client.configure(httpConfig);
 

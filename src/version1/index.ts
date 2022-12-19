@@ -7,6 +7,6 @@ export { HelpArticleContentV1 } from './HelpArticleContentV1';
 export { HelpArticleV1 } from './HelpArticleV1';
 
 export { IHelpClientV1 } from './IHelpClientV1';
-export { HelpHttpClientV1 } from './HelpHttpClientV1';
-export { HelpLambdaClientV1 } from './HelpLambdaClientV1';
+export { HelpCommandableHttpClientV1 } from './HelpCommandableHttpClientV1';
+export { HelpCommandableLambdaClientV1 } from './HelpCommandableLambdaClientV1';
 export { HelpDirectClientV1 } from './HelpDirectClientV1';

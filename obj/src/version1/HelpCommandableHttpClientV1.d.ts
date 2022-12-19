@@ -5,7 +5,7 @@ import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 import { HelpTopicV1 } from './HelpTopicV1';
 import { HelpArticleV1 } from './HelpArticleV1';
 import { IHelpClientV1 } from './IHelpClientV1';
-export declare class HelpHttpClientV1 extends CommandableHttpClient implements IHelpClientV1 {
+export declare class HelpCommandableHttpClientV1 extends CommandableHttpClient implements IHelpClientV1 {
     constructor(config?: any);
     getTopics(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<HelpTopicV1>>;
     getTopicById(correlationId: string, topicId: string): Promise<HelpTopicV1>;

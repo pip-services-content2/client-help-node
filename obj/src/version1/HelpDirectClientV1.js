@@ -25,14 +25,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_topics');
             try {
-                return yield this._controller.getTopics(correlationId, filter, paging);
+                let res = yield this._controller.getTopics(correlationId, filter, paging);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -40,14 +39,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_topic_by_id');
             try {
-                return yield this._controller.getTopicById(correlationId, topicId);
+                let res = yield this._controller.getTopicById(correlationId, topicId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -55,14 +53,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.create_topic');
             try {
-                return yield this._controller.createTopic(correlationId, topic);
+                let res = yield this._controller.createTopic(correlationId, topic);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -70,14 +67,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.update_topic');
             try {
-                return yield this._controller.updateTopic(correlationId, topic);
+                let res = yield this._controller.updateTopic(correlationId, topic);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -85,14 +81,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.delete_topic_by_id');
             try {
-                return yield this._controller.deleteTopicById(correlationId, topicId);
+                let res = yield this._controller.deleteTopicById(correlationId, topicId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -100,14 +95,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_articles');
             try {
-                return yield this._controller.getArticles(correlationId, filter, paging);
+                let res = yield this._controller.getArticles(correlationId, filter, paging);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -115,14 +109,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_random_article');
             try {
-                return yield this._controller.getRandomArticle(correlationId, filter);
+                let res = yield this._controller.getRandomArticle(correlationId, filter);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -130,14 +123,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_article_by_id');
             try {
-                return yield this._controller.getArticleById(correlationId, articleId);
+                let res = yield this._controller.getArticleById(correlationId, articleId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -145,14 +137,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.create_article');
             try {
-                return yield this._controller.createArticle(correlationId, article);
+                let res = yield this._controller.createArticle(correlationId, article);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -160,14 +151,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.update_article');
             try {
-                return yield this._controller.updateArticle(correlationId, article);
+                let res = yield this._controller.updateArticle(correlationId, article);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -175,14 +165,13 @@ class HelpDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.delete_article_by_id');
             try {
-                return yield this._controller.deleteArticleById(correlationId, articleId);
+                let res = yield this._controller.deleteArticleById(correlationId, articleId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }

@@ -5,7 +5,7 @@ import { CommandableLambdaClient } from 'pip-services3-aws-nodex';
 import { HelpTopicV1 } from './HelpTopicV1';
 import { HelpArticleV1 } from './HelpArticleV1';
 import { IHelpClientV1 } from './IHelpClientV1';
-export declare class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelpClientV1 {
+export declare class HelpCommandableLambdaClientV1 extends CommandableLambdaClient implements IHelpClientV1 {
     constructor(config?: any);
     getTopics(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<HelpTopicV1>>;
     getTopicById(correlationId: string, topicId: string): Promise<HelpTopicV1>;

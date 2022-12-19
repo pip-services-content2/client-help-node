@@ -3,7 +3,7 @@ import { Factory } from 'pip-services3-components-nodex';
 export declare class HelpClientFactory extends Factory {
     static Descriptor: Descriptor;
     static DirectClientV1Descriptor: Descriptor;
-    static HttpClientV1Descriptor: Descriptor;
-    static LambdaClientV1Descriptor: Descriptor;
+    static CmdHttpClientV1Descriptor: Descriptor;
+    static CmdLambdaClientV1Descriptor: Descriptor;
     constructor();
 }

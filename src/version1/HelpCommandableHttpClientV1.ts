@@ -2,26 +2,26 @@ import { ConfigParams } from 'pip-services3-commons-nodex';
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
-import { CommandableLambdaClient } from 'pip-services3-aws-nodex';
+import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 
 import { HelpTopicV1 } from './HelpTopicV1';
 import { HelpArticleV1 } from './HelpArticleV1';
 import { IHelpClientV1 } from './IHelpClientV1';
 
-export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelpClientV1 {
+export class HelpCommandableHttpClientV1 extends CommandableHttpClient implements IHelpClientV1 {
 
     constructor(config?: any) {
-        super('help');
+        super('v1/help');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
     }
-       
+        
     public async getTopics(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<HelpTopicV1>> {
         let timing = this.instrument(correlationId, 'help.get_topics');
 
         try {
-            return await this.callCommand(
+            let res: DataPage<HelpTopicV1> = await this.callCommand(
                 'get_topics',
                 correlationId,
                 {
@@ -29,11 +29,11 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
                     paging: paging
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -41,18 +41,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.get_topic_by_id');
 
         try {
-            return await this.callCommand(
+            let res: HelpTopicV1 = await this.callCommand(
                 'get_topic_by_id',
                 correlationId,
                 {
                     topic_id: topicId
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -60,18 +60,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.create_topic');
 
         try {
-            return await this.callCommand(
+            let res: HelpTopicV1 = await this.callCommand(
                 'create_topic',
                 correlationId,
                 {
                     topic: topic,
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -79,18 +79,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.update_topic');
 
         try {
-            return await this.callCommand(
+            let res: HelpTopicV1 = await this.callCommand(
                 'update_topic',
                 correlationId,
                 {
                     topic: topic,
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -98,18 +98,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.delete_topic_by_id');
 
         try {
-            return await this.callCommand(
+            let res: HelpTopicV1 = await this.callCommand(
                 'delete_topic_by_id',
                 correlationId,
                 {
                     topic_id: topicId
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -117,7 +117,7 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.get_articles');
 
         try {
-            return await this.callCommand(
+            let res: DataPage<HelpArticleV1> = await this.callCommand(
                 'get_articles',
                 correlationId,
                 {
@@ -125,11 +125,11 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
                     paging: paging
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -137,18 +137,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.get_random_article');
 
         try {
-            return await this.callCommand(
+            let res: HelpArticleV1 = await this.callCommand(
                 'get_random_article',
                 correlationId,
                 {
                     filter: filter
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -156,18 +156,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.get_article_by_id');
 
         try {
-            return await this.callCommand(
+            let res: HelpArticleV1 = await this.callCommand(
                 'get_article_by_id',
                 correlationId,
                 {
                     article_id: articleId
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -175,18 +175,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.create_article');
 
         try {
-            return await this.callCommand(
+            let res: HelpArticleV1 = await this.callCommand(
                 'create_article',
                 correlationId,
                 {
                     article: article
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -194,18 +194,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.update_article');
 
         try {
-            return await this.callCommand(
+            let res: HelpArticleV1 = await this.callCommand(
                 'update_article',
                 correlationId,
                 {
                     article: article
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -213,18 +213,18 @@ export class HelpLambdaClientV1 extends CommandableLambdaClient implements IHelp
         let timing = this.instrument(correlationId, 'help.delete_article_by_id');
 
         try {
-            return await this.callCommand(
+            let res: HelpArticleV1 = await this.callCommand(
                 'delete_article_by_id',
                 correlationId,
                 {
                     article_id: articleId
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 

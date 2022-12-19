@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HelpLambdaClientV1 = void 0;
+exports.HelpCommandableHttpClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-const pip_services3_aws_nodex_1 = require("pip-services3-aws-nodex");
-class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClient {
+const pip_services3_rpc_nodex_1 = require("pip-services3-rpc-nodex");
+class HelpCommandableHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClient {
     constructor(config) {
-        super('help');
+        super('v1/help');
         if (config != null)
             this.configure(pip_services3_commons_nodex_1.ConfigParams.fromValue(config));
     }
@@ -22,17 +22,16 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_topics');
             try {
-                return yield this.callCommand('get_topics', correlationId, {
+                let res = yield this.callCommand('get_topics', correlationId, {
                     filter: filter,
                     paging: paging
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -40,16 +39,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_topic_by_id');
             try {
-                return yield this.callCommand('get_topic_by_id', correlationId, {
+                let res = yield this.callCommand('get_topic_by_id', correlationId, {
                     topic_id: topicId
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -57,16 +55,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.create_topic');
             try {
-                return yield this.callCommand('create_topic', correlationId, {
+                let res = yield this.callCommand('create_topic', correlationId, {
                     topic: topic,
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -74,16 +71,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.update_topic');
             try {
-                return yield this.callCommand('update_topic', correlationId, {
+                let res = yield this.callCommand('update_topic', correlationId, {
                     topic: topic,
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -91,16 +87,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.delete_topic_by_id');
             try {
-                return yield this.callCommand('delete_topic_by_id', correlationId, {
+                let res = yield this.callCommand('delete_topic_by_id', correlationId, {
                     topic_id: topicId
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -108,17 +103,16 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_articles');
             try {
-                return yield this.callCommand('get_articles', correlationId, {
+                let res = yield this.callCommand('get_articles', correlationId, {
                     filter: filter,
                     paging: paging
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -126,16 +120,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_random_article');
             try {
-                return yield this.callCommand('get_random_article', correlationId, {
+                let res = yield this.callCommand('get_random_article', correlationId, {
                     filter: filter
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -143,16 +136,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.get_article_by_id');
             try {
-                return yield this.callCommand('get_article_by_id', correlationId, {
+                let res = yield this.callCommand('get_article_by_id', correlationId, {
                     article_id: articleId
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -160,16 +152,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.create_article');
             try {
-                return yield this.callCommand('create_article', correlationId, {
+                let res = yield this.callCommand('create_article', correlationId, {
                     article: article
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -177,16 +168,15 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.update_article');
             try {
-                return yield this.callCommand('update_article', correlationId, {
+                let res = yield this.callCommand('update_article', correlationId, {
                     article: article
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -194,19 +184,18 @@ class HelpLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClie
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'help.delete_article_by_id');
             try {
-                return yield this.callCommand('delete_article_by_id', correlationId, {
+                let res = yield this.callCommand('delete_article_by_id', correlationId, {
                     article_id: articleId
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
             }
-            finally {
-                timing.endTiming();
-            }
         });
     }
 }
-exports.HelpLambdaClientV1 = HelpLambdaClientV1;
-//# sourceMappingURL=HelpLambdaClientV1.js.map
+exports.HelpCommandableHttpClientV1 = HelpCommandableHttpClientV1;
+//# sourceMappingURL=HelpCommandableHttpClientV1.js.map
