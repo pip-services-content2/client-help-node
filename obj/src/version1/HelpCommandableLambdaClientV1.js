@@ -20,180 +20,81 @@ class HelpCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Commandabl
     }
     getTopics(correlationId, filter, paging) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.get_topics');
-            try {
-                let res = yield this.callCommand('get_topics', correlationId, {
-                    filter: filter,
-                    paging: paging
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('get_topics', correlationId, {
+                filter: filter,
+                paging: paging
+            });
         });
     }
     getTopicById(correlationId, topicId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.get_topic_by_id');
-            try {
-                let res = yield this.callCommand('get_topic_by_id', correlationId, {
-                    topic_id: topicId
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('get_topic_by_id', correlationId, {
+                topic_id: topicId
+            });
         });
     }
     createTopic(correlationId, topic) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.create_topic');
-            try {
-                let res = yield this.callCommand('create_topic', correlationId, {
-                    topic: topic,
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('create_topic', correlationId, {
+                topic: topic,
+            });
         });
     }
     updateTopic(correlationId, topic) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.update_topic');
-            try {
-                let res = yield this.callCommand('update_topic', correlationId, {
-                    topic: topic,
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('update_topic', correlationId, {
+                topic: topic,
+            });
         });
     }
     deleteTopicById(correlationId, topicId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.delete_topic_by_id');
-            try {
-                let res = yield this.callCommand('delete_topic_by_id', correlationId, {
-                    topic_id: topicId
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('delete_topic_by_id', correlationId, {
+                topic_id: topicId
+            });
         });
     }
     getArticles(correlationId, filter, paging) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.get_articles');
-            try {
-                let res = yield this.callCommand('get_articles', correlationId, {
-                    filter: filter,
-                    paging: paging
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('get_articles', correlationId, {
+                filter: filter,
+                paging: paging
+            });
         });
     }
     getRandomArticle(correlationId, filter) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.get_random_article');
-            try {
-                let res = yield this.callCommand('get_random_article', correlationId, {
-                    filter: filter
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('get_random_article', correlationId, {
+                filter: filter
+            });
         });
     }
     getArticleById(correlationId, articleId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.get_article_by_id');
-            try {
-                let res = yield this.callCommand('get_article_by_id', correlationId, {
-                    article_id: articleId
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('get_article_by_id', correlationId, {
+                article_id: articleId
+            });
         });
     }
     createArticle(correlationId, article) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.create_article');
-            try {
-                let res = yield this.callCommand('create_article', correlationId, {
-                    article: article
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('create_article', correlationId, {
+                article: article
+            });
         });
     }
     updateArticle(correlationId, article) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.update_article');
-            try {
-                let res = yield this.callCommand('update_article', correlationId, {
-                    article: article
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('update_article', correlationId, {
+                article: article
+            });
         });
     }
     deleteArticleById(correlationId, articleId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'help.delete_article_by_id');
-            try {
-                let res = yield this.callCommand('delete_article_by_id', correlationId, {
-                    article_id: articleId
-                });
-                timing.endTiming();
-                return res;
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
+            return yield this.callCommand('delete_article_by_id', correlationId, {
+                article_id: articleId
+            });
         });
     }
 }

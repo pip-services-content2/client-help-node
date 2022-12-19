@@ -18,214 +18,115 @@ export class HelpCommandableLambdaClientV1 extends CommandableLambdaClient imple
     }
        
     public async getTopics(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<HelpTopicV1>> {
-        let timing = this.instrument(correlationId, 'help.get_topics');
-
-        try {
-            let res = await this.callCommand(
-                'get_topics',
-                correlationId,
-                {
-                    filter: filter,
-                    paging: paging
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'get_topics',
+            correlationId,
+            {
+                filter: filter,
+                paging: paging
+            }
+        );
     }
 
     public async getTopicById(correlationId: string, topicId: string): Promise<HelpTopicV1> {
-        let timing = this.instrument(correlationId, 'help.get_topic_by_id');
-
-        try {
-            let res = await this.callCommand(
-                'get_topic_by_id',
-                correlationId,
-                {
-                    topic_id: topicId
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'get_topic_by_id',
+            correlationId,
+            {
+                topic_id: topicId
+            }
+        );
     }
 
     public async createTopic(correlationId: string, topic: HelpTopicV1): Promise<HelpTopicV1> {
-        let timing = this.instrument(correlationId, 'help.create_topic');
-
-        try {
-            let res = await this.callCommand(
-                'create_topic',
-                correlationId,
-                {
-                    topic: topic,
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'create_topic',
+            correlationId,
+            {
+                topic: topic,
+            }
+        );
     }
 
     public async updateTopic(correlationId: string, topic: HelpTopicV1): Promise<HelpTopicV1> {
-        let timing = this.instrument(correlationId, 'help.update_topic');
-
-        try {
-            let res = await this.callCommand(
-                'update_topic',
-                correlationId,
-                {
-                    topic: topic,
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'update_topic',
+            correlationId,
+            {
+                topic: topic,
+            }
+        );
     }
 
     public async deleteTopicById(correlationId: string, topicId: string): Promise<HelpTopicV1> {
-        let timing = this.instrument(correlationId, 'help.delete_topic_by_id');
-
-        try {
-            let res = await this.callCommand(
-                'delete_topic_by_id',
-                correlationId,
-                {
-                    topic_id: topicId
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'delete_topic_by_id',
+            correlationId,
+            {
+                topic_id: topicId
+            }
+        );
     }
 
     public async getArticles(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<HelpArticleV1>> {
-        let timing = this.instrument(correlationId, 'help.get_articles');
-
-        try {
-            let res = await this.callCommand(
-                'get_articles',
-                correlationId,
-                {
-                    filter: filter,
-                    paging: paging
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'get_articles',
+            correlationId,
+            {
+                filter: filter,
+                paging: paging
+            }
+        );
     }
 
     public async getRandomArticle(correlationId: string, filter: FilterParams): Promise<HelpArticleV1> {
-        let timing = this.instrument(correlationId, 'help.get_random_article');
-
-        try {
-            let res = await this.callCommand(
-                'get_random_article',
-                correlationId,
-                {
-                    filter: filter
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'get_random_article',
+            correlationId,
+            {
+                filter: filter
+            }
+        );
     }
 
     public async getArticleById(correlationId: string, articleId: string): Promise<HelpArticleV1> {
-        let timing = this.instrument(correlationId, 'help.get_article_by_id');
-
-        try {
-            let res = await this.callCommand(
-                'get_article_by_id',
-                correlationId,
-                {
-                    article_id: articleId
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'get_article_by_id',
+            correlationId,
+            {
+                article_id: articleId
+            }
+        );
     }
 
     public async createArticle(correlationId: string, article: HelpArticleV1): Promise<HelpArticleV1> {
-        let timing = this.instrument(correlationId, 'help.create_article');
-
-        try {
-            let res = await this.callCommand(
-                'create_article',
-                correlationId,
-                {
-                    article: article
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'create_article',
+            correlationId,
+            {
+                article: article
+            }
+        );
     }
 
     public async updateArticle(correlationId: string, article: HelpArticleV1): Promise<HelpArticleV1> {
-        let timing = this.instrument(correlationId, 'help.update_article');
-
-        try {
-            let res = await this.callCommand(
-                'update_article',
-                correlationId,
-                {
-                    article: article
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'update_article',
+            correlationId,
+            {
+                article: article
+            }
+        );
     }
 
     public async deleteArticleById(correlationId: string, articleId: string): Promise<HelpArticleV1> {
-        let timing = this.instrument(correlationId, 'help.delete_article_by_id');
-
-        try {
-            let res = await this.callCommand(
-                'delete_article_by_id',
-                correlationId,
-                {
-                    article_id: articleId
-                }
-            );
-            timing.endTiming();
-            return res;
-        } catch (err) {
-            timing.endFailure(err);
-            throw err;
-        }
+        return await this.callCommand(
+            'delete_article_by_id',
+            correlationId,
+            {
+                article_id: articleId
+            }
+        );
     }
 
 }
